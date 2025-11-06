@@ -44,12 +44,12 @@ Frontend will start on http://localhost:5173
 
 Backend (.env):
 - PORT=5000
-- MONGODB_URI=mongodb://127.0.0.1:27017/referral_credit_app
+- MONGODB_URI=<your_mongodb_uri>
 - JWT_SECRET=replace_with_strong_secret
-- PUBLIC_APP_URL=http://localhost:5173
+- PUBLIC_APP_URL=https://referrals-shop.vercel.app
 
 Frontend (.env):
-- VITE_API_URL=http://localhost:5000/api
+- VITE_API_URL=https://referrals-shop.onrender.com/api
 
 ## API Overview (Backend)
 - GET /api/health
@@ -86,8 +86,12 @@ Frontend (.env):
   - Set env vars (MONGODB_URI, JWT_SECRET, PUBLIC_APP_URL)
   - Start command: `npm start`, Build: none
 - Frontend: Vercel or Netlify
-  - Set env var VITE_API_URL to your live backend URL (e.g. https://api.example.com/api)
+  - Set env var VITE_API_URL to your live backend URL (e.g. https://referrals-shop.onrender.com/api)
   - Build command: `npm run build`, Publish dir: `dist`
+
+## Live URLs
+- Backend (Render): https://referrals-shop.onrender.com
+- Frontend (Vercel): https://referrals-shop.vercel.app/
 
 ## Common Issues
 - Tailwind CSS at-rule warnings in IDE are harmless; Tailwind builds them via PostCSS during `npm run dev`/`build`.
