@@ -62,6 +62,20 @@ Frontend (.env):
 - GET /api/dashboard/summary (Bearer token)
 - GET /api/dashboard/referral-link (Bearer token)
 
+## Architecture (brief)
+
+- Frontend: React + Vite + Redux. Talks to backend at `VITE_API_URL`.
+- Backend: Express + MongoDB. Routes: auth, products, purchases, dashboard.
+- Flow: Register (optional referral code/username) → Login → Shop → First purchase credits both users (+2 each) once.
+
+## Quick Testing
+
+- Base: `http://localhost:5000/api`
+- Health: GET `/health`
+- Register: POST `/auth/register`
+- Login: POST `/auth/login`
+- Products: GET `/products`
+
 ## Notes on Referral Crediting
 - First purchase crediting is atomic (no transactions) to work on standalone MongoDB.
 - Only the first purchase of a referred user triggers +2 credits for both users.
